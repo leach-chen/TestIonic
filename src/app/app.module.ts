@@ -27,6 +27,7 @@ import { NewPageComponent } from './new-page/new-page.component';
       {
         path: '',
         loadChildren: () => import('./product-list/product-list.module').then(m => m.ProductListModule)
+        //loadChildren:"./product-list/product-list.module#ProductListModule"
       }
     ])
   ],

@@ -14,23 +14,25 @@ import { NewPageComponent } from './new-page/new-page.component';
     BrowserModule,
     ReactiveFormsModule,
     RouterModule.forRoot([
-      {
+ /*     {
         path: '',
         component: ProductListComponent,
-/*        children:[
+/!*        children:[
           {path:'test',component: NewPageComponent}
-        ]*/
-      },
-      {
+        ]*!/
+      },*/
+/*    {
         path:'test',component: NewPageComponent
+      }*/
+      {
+        path: '',
+        loadChildren: () => import('./product-list/product-list.module').then(m => m.ProductListModule)
       }
     ])
   ],
   declarations: [
     AppComponent,
     TopBarComponent,
-    ProductListComponent,
-    NewPageComponent
   ],
   bootstrap: [ AppComponent ]
 })
